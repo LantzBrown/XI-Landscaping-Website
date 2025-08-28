@@ -9,11 +9,12 @@ import {
   AccordionTrigger,
 } from "../../components/ui/accordion";
 import { Separator } from "../../components/ui/separator";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { trackPhoneClick } from "../../utils/airtable";
 
 export const MobileHome = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
 
   // Navigation items
@@ -129,6 +130,14 @@ export const MobileHome = (): JSX.Element => {
   ];
 
 
+
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
 
   const formatTestimonialText = (text: string) => {
     return text.split(/(\([^)]+\))/).map((part, index) => {
@@ -545,23 +554,55 @@ export const MobileHome = (): JSX.Element => {
       <section className="w-full bg-ligth-gray py-10">
         <div className="px-4">
           <div className="text-center mb-6">
-            <div className="font-normal text-[#202e13] text-lg">
+            <div className="font-normal text-[#202e13] text-lg mb-8">
               [&nbsp;&nbsp; TESTIMONIALS&nbsp;&nbsp; ]
             </div>
 
-            <div className="text-center">
-              <p className="font-semibold text-lg mb-6 text-[#202e13] px-4">
-                {formatTestimonialText(testimonials[0].text)}
-              </p>
-
-              <h4 className="font-semibold text-[#202e13] text-[22px]">
-                {testimonials[0].author}
-              </h4>
-              {testimonials[0].position && (
-                <p className="font-normal text-[#9c9797] text-lg">
-                  {testimonials[0].position}
+            <div className="relative">
+              <div className="text-center px-4">
+                <p className="font-semibold text-lg mb-6 text-[#202e13]">
+                  {formatTestimonialText(testimonials[currentTestimonial].text)}
                 </p>
-              )}
+
+                <h4 className="font-semibold text-[#202e13] text-[22px]">
+                  {testimonials[currentTestimonial].author}
+                </h4>
+                {testimonials[currentTestimonial].position && (
+                  <p className="font-normal text-[#9c9797] text-lg">
+                    {testimonials[currentTestimonial].position}
+                  </p>
+                )}
+              </div>
+
+              {/* Navigation Arrows */}
+              <button
+                onClick={prevTestimonial}
+                className="absolute left-2 top-1/2 -translate-y-1/2 p-2 text-[#202e13] hover:text-[#2d3e1e] transition-colors"
+                aria-label="Previous testimonial"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button
+                onClick={nextTestimonial}
+                className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-[#202e13] hover:text-[#2d3e1e] transition-colors"
+                aria-label="Next testimonial"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            </div>
+
+            {/* Dots Indicator */}
+            <div className="flex justify-center mt-6 space-x-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentTestimonial(index)}
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    index === currentTestimonial ? 'bg-[#202e13]' : 'bg-[#9c9797]'
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
         </div>
