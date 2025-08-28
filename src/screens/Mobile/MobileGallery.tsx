@@ -107,7 +107,6 @@ export const MobileGallery = (): JSX.Element => {
         <div className="columns-2 gap-3">
           {mobileGalleryImages.map((image, index) => (
             <div key={`gallery-${index}`} className="relative mb-3 break-inside-avoid">
-              <div className="absolute inset-0 bg-black bg-opacity-30 rounded-lg z-10"></div>
               <img
                 className="w-full object-cover rounded-lg"
                 style={{

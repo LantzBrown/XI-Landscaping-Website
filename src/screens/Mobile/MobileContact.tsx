@@ -5,7 +5,7 @@ import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
 import { Separator } from "../../components/ui/separator";
 import { Textarea } from "../../components/ui/textarea";
-import { submitToAirtable, ContactFormData } from "../../utils/airtable";
+import { submitToAirtable, ContactFormData, trackPhoneClick } from "../../utils/airtable";
 
 // Service areas
 const serviceAreas = [
@@ -75,6 +75,7 @@ export const MobileContact = (): JSX.Element => {
     <div className="relative w-full min-h-screen bg-ligth-gray">
       {/* Header */}
       <header className="relative w-full h-[175px] bg-[url(https://c.animaapp.com/mdhv6xukEmiG5d/img/rectangle-28-5.png)] bg-cover bg-center">
+        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
         <img
           className="absolute inset-0 w-full h-full object-cover"
           alt="Contact header background"
@@ -146,6 +147,14 @@ export const MobileContact = (): JSX.Element => {
             <a 
               href="tel:+19162544538"
               className="font-['Inter',Helvetica] font-normal text-[#6f6f6f] text-[23px] tracking-[0] leading-[normal] hover:underline"
+              onClick={() => {
+                trackPhoneClick({
+                  phoneNumber: "+1 (916) 254-4538",
+                  timestamp: new Date().toISOString(),
+                  userAgent: navigator.userAgent,
+                  page: "Mobile Contact"
+                });
+              }}
             >
               +1 (916) 254-4538
             </a>
@@ -206,8 +215,6 @@ export const MobileContact = (): JSX.Element => {
             type="submit"
             disabled={isSubmitting}
             className="h-[53px] bg-[#202e13] rounded-[10px] font-['Inter',Helvetica] font-semibold text-white text-[20px] disabled:opacity-50"
-            onClick={() => (window as any).gtag_report_conversion && (window as any).gtag_report_conversion()}
-            onClick={() => (window as any).gtag_report_conversion && (window as any).gtag_report_conversion()}
             onClick={() => (window as any).gtag_report_conversion && (window as any).gtag_report_conversion()}
           >
             {isSubmitting ? 'Submitting...' : 'Get Free Estimate'}

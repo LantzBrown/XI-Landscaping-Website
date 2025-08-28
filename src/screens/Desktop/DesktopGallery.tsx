@@ -164,7 +164,6 @@ export const DesktopGallery = (): JSX.Element => {
         <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-4">
           {desktopGalleryImages.map((image, index) => (
             <div key={`desktop-gallery-${index}`} className="relative mb-4 break-inside-avoid">
-              <div className="absolute inset-0 bg-black bg-opacity-30 rounded-lg z-10"></div>
               <img
                 className="w-full h-auto object-cover rounded-lg"
                 alt={`XI landscaping project ${index + 1}`}

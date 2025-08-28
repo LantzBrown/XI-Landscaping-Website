@@ -9,11 +9,12 @@ import {
   AccordionTrigger,
 } from "../../components/ui/accordion";
 import { Separator } from "../../components/ui/separator";
-import { Menu, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { trackPhoneClick } from "../../utils/airtable";
 
 export const MobileHome = (): JSX.Element => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
 
   // Navigation items
   const navItems = [
@@ -90,21 +91,21 @@ export const MobileHome = (): JSX.Element => {
   // Service categories
   const serviceCategories = [
     {
-      title: "RESIDENTIAL",
-      description:
-        "Crafting the perfect garden space for your home. Whether indoor or outdoor, we got it all ready for your greenery needs.",
-      image: "https://c.animaapp.com/mdii0hdzXe40MW/img/rectangle-27.png",
+      title: "LANDSCAPING",
+      description: "Designing a garden which makes you spend more time outdoors with the family and loved ones",
+      image: "https://ik.imagekit.io/lantz/Sabas/Screenshot%202025-08-28%20at%2011.41.03%E2%80%AFAM.png",
     },
     {
-      title: "COMMERCIAL",
-      description: "Landscaping and maintenance for your business",
-      image: "https://c.animaapp.com/mdii0hdzXe40MW/img/rectangle-17.png",
+      title: "LAWN CARE",
+      description:
+        "A garden you don't have to worry about so you can spend your time with the family and loved ones. We do the general maintenance and anything else your garden might need like fertilisation, bush trimming, etc.",
+      image: "https://ik.imagekit.io/lantz/Sabas/Gardener.jpg?updatedAt=1752625729518",
     },
     {
-      title: "MUNICIPAL",
+      title: "OTHER SERVICES",
       description:
-        "Landscaping and maintenance for public gardens and city parks.",
-      image: "https://c.animaapp.com/mdii0hdzXe40MW/img/rectangle-18.png",
+        "We have a wide variety of services, feel free to check them out, we match the services to meet your needs so feel free to ask about them or others.",
+      image: "https://ik.imagekit.io/lantz/Sabas/Screenshot%202025-08-28%20at%2011.41.55%E2%80%AFAM.png",
     },
   ];
 
@@ -127,13 +128,7 @@ export const MobileHome = (): JSX.Element => {
     },
   ];
 
-  const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  };
 
-  const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
 
   const formatTestimonialText = (text: string) => {
     return text.split(/(\([^)]+\))/).map((part, index) => {
@@ -185,10 +180,7 @@ export const MobileHome = (): JSX.Element => {
       question: "Are you licensed and insured?",
       answer: "Yes, we are fully licensed and insured for all the work we perform, providing you with peace of mind throughout the project.",
     },
-    {
-      question: "Do you offer warranties on your work?",
-      answer: "We stand behind our work with comprehensive warranties on both materials and labor, details of which we'll discuss during the consultation.",
-    },
+
     {
       question: "Do you offer maintenance services for completed landscaping projects?",
       answer: "Yes, we do maintenance even if we didn't install your landscape.",
@@ -210,7 +202,6 @@ export const MobileHome = (): JSX.Element => {
           src="https://ik.imagekit.io/lantz/Sabas/Screenshot%202025-08-12%20at%202.00.34%E2%80%AFPM.png"
           loading="eager"
           decoding="async"
-          fetchpriority="high"
         />
 
         {/* Navigation */}
@@ -257,17 +248,15 @@ export const MobileHome = (): JSX.Element => {
 
         {/* Hero Text */}
         <div className="absolute w-full top-[120px] text-center px-4 z-10">
-          <h1 className="font-semibold text-light-gray text-5xl mb-2">
-            DREAM GARDENS
+          <h1 className="font-semibold text-light-gray text-5xl mb-4">
+            LANDSCAPING
           </h1>
           <h2 className="font-normal text-white text-4xl mb-4">
-            BUILT AND MAINTAINED
+            AND LAWN CARE
           </h2>
 
           <p className="font-normal text-[#d6d6d6] text-lg mx-auto">
-            We've built and maintained the best gardens in Sacramento for
-            20+ years.<br />
-            And we want to do the same for you.
+            We've been doing this for the last 20+ years, so you can have your dream garden and spend more time enjoying your garden instead of working on it.
           </p>
         </div>
 
@@ -276,7 +265,15 @@ export const MobileHome = (): JSX.Element => {
           <a 
             href="tel:+19162544538" 
             className="font-bold text-white text-2xl underline"
-            onClick={() => (window as any).gtag_report_conversion && (window as any).gtag_report_conversion()}
+            onClick={() => {
+              (window as any).gtag_report_conversion && (window as any).gtag_report_conversion();
+              trackPhoneClick({
+                phoneNumber: "(916) 254-4538",
+                timestamp: new Date().toISOString(),
+                userAgent: navigator.userAgent,
+                page: "Mobile Home"
+              });
+            }}
           >
             (916) 254-4538
           </a>
@@ -290,111 +287,10 @@ export const MobileHome = (): JSX.Element => {
         </div>
       </section>
 
-      {/* What Makes Us Different Section */}
-      <section className="w-full bg-ligth-gray py-10">
-        <div className="px-4">
-          <h2 className="font-semibold text-[36px]">
-            <span className="text-[#202e13]">WHAT MAKES US </span>
-            <span className="text-[#979696]">DIFFERENT</span>
-            <span className="text-[#202e13]">?</span>
-          </h2>
-          <div className="font-normal text-[#202e13] text-lg mb-6">
-            [&nbsp;&nbsp; ABOUT US&nbsp;&nbsp; ]
-          </div>
-
-          <div className="space-y-8">
-            {differentiators.map((item, index) => (
-              <div 
-                key={index} 
-                className={`flex flex-col ${item.align === 'right' ? 'items-end text-right' : 'items-start text-left'}`}
-              >
-                <h3 className="font-semibold text-[#202e13] text-[22px] mb-2">
-                  {item.title}
-                </h3>
-                <p className="font-normal text-[#9c9797] text-base max-w-[80%]">
-                  {item.description.split("\n\n").map((paragraph, i) => (
-                    <React.Fragment key={i}>
-                      {paragraph}
-                      {i < item.description.split("\n\n").length - 1 && (
-                        <>
-                          <br />
-                          <br />
-                        </>
-                      )}
-                    </React.Fragment>
-                  ))}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8 relative">
-            <div className="absolute inset-0 bg-black bg-opacity-40 rounded-lg z-10"></div>
-            <img
-              className="w-full h-[250px] object-cover rounded-lg"
-              alt="Garden landscape"
-              src="https://c.animaapp.com/mdii0hdzXe40MW/img/rectangle-11.png"
-              loading="lazy"
-              decoding="async"
-            />
-            <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
-              <Button className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[50px] bg-[#202e13] hover:bg-[#2d3e1e] rounded-none z-20">
-                <span className="font-semibold text-white text-lg">
-                  Contact Us
-                </span>
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section id="services" className="w-full bg-[#202e13] bg-opacity-87 py-10">
-        <div className="px-4">
-          <div className="mb-6">
-            <h2 className="font-semibold text-[36px] text-right">
-              <span className="text-white">SIMPLE STEPS FOR OUR </span>
-              <span className="text-[#d6d6d6]">LANDSCAPE</span>
-              <span className="text-white"> WORK</span>
-            </h2>
-            <div className="font-normal text-white text-lg text-right">
-              [&nbsp;&nbsp; HOW IT WORKS&nbsp;&nbsp; ]
-            </div>
-          </div>
-
-          {/* Process Steps */}
-          <div className="space-y-8">
-            {processSteps.map((step, index) => (
-              <div 
-                key={index} 
-                className={`${step.align === 'right' ? 'text-right' : 'text-left'}`}
-              >
-                {step.hasButton ? (
-                  <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
-                    <h3 className="font-semibold text-[#202e13] text-[22px] mb-2 bg-white inline-block px-3 py-1 cursor-pointer hover:bg-gray-100">
-                      {step.number} | {step.title}
-                    </h3>
-                  </Link>
-                ) : (
-                  <h3 className="font-semibold text-white text-[22px] mb-2 bg-transparent inline-block px-3 py-1">
-                    {step.number} | {step.title}
-                  </h3>
-                )}
-                <p className="font-normal text-[#b6b6b6] text-base">
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Services Section */}
       <section className="w-full bg-ligth-gray py-10">
         <div className="px-4">
           <h2 className="font-semibold text-[36px]">
-            <span className="text-[#202e13]">WHAT WE DO </span>
-            <span className="text-[#979696]">AND FOR WHO</span>
           </h2>
           <div className="font-normal text-[#202e13] text-lg mb-6">
             [&nbsp;&nbsp; SERVICES&nbsp;&nbsp; ]
@@ -445,10 +341,165 @@ export const MobileHome = (): JSX.Element => {
         </div>
       </section>
 
+      {/* How It Works Section */}
+      <section id="services" className="w-full bg-[#202e13] bg-opacity-87 py-10">
+        <div className="px-4">
+          <div className="mb-6">
+            <h2 className="font-semibold text-[36px] text-right">
+              <span className="text-white">SIMPLE STEPS FOR OUR </span>
+              <span className="text-[#d6d6d6]">LANDSCAPE</span>
+              <span className="text-white"> WORK</span>
+            </h2>
+            <div className="font-normal text-white text-lg text-right">
+              [&nbsp;&nbsp; HOW IT WORKS&nbsp;&nbsp; ]
+            </div>
+          </div>
+
+          {/* Process Steps */}
+          <div className="space-y-8">
+            {processSteps.map((step, index) => (
+              <div 
+                key={index} 
+                className={`${step.align === 'right' ? 'text-right' : 'text-left'}`}
+              >
+                {step.hasButton ? (
+                  <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
+                    <h3 className="font-semibold text-[#202e13] text-[22px] mb-2 bg-white inline-block px-3 py-1 cursor-pointer hover:bg-gray-100">
+                      {step.number} | {step.title}
+                    </h3>
+                  </Link>
+                ) : (
+                  <h3 className="font-semibold text-white text-[22px] mb-2 bg-transparent inline-block px-3 py-1">
+                    {step.number} | {step.title}
+                  </h3>
+                )}
+                <p className="font-normal text-[#b6b6b6] text-base">
+                  {step.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Lawn Care How It Works Section */}
+      <section className="w-full bg-ligth-gray py-10">
+        <div className="px-4">
+          <div className="mb-6">
+            <h2 className="font-semibold text-[36px] text-left">
+              <span className="text-[#202e13]">SIMPLE STEPS FOR OUR </span>
+              <span className="text-[#979696]">LAWN CARE</span>
+            </h2>
+            <div className="font-normal text-[#202e13] text-lg text-left">
+              [&nbsp;&nbsp; HOW IT WORKS&nbsp;&nbsp; ]
+            </div>
+          </div>
+
+          {/* Lawn Care Process Steps */}
+          <div className="space-y-8">
+            <div className="text-right">
+               <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
+                 <h3 className="font-semibold text-white text-[22px] mb-2 bg-[#202e13] inline-block px-3 py-1 cursor-pointer hover:bg-[#1a2510]">
+                   01 | Free Estimate
+                 </h3>
+               </Link>
+              <p className="font-normal text-[#6f6f6f] text-base">
+                We have a relaxed conversation about your garden's needs, and then we match the pricing and services to your needs.
+              </p>
+            </div>
+            
+            <div className="text-left">
+              <h3 className="font-semibold text-[#202e13] text-[22px] mb-2 bg-transparent inline-block px-3 py-1">
+                02 | We Start
+              </h3>
+              <p className="font-normal text-[#6f6f6f] text-base">
+                We start maintaining your garden on the day and time you chose.
+              </p>
+            </div>
+            
+            <div className="text-right">
+              <h3 className="font-semibold text-[#202e13] text-[22px] mb-2 bg-transparent inline-block px-3 py-1">
+                03 | Relax
+              </h3>
+              <p className="font-normal text-[#6f6f6f] text-base">
+                We'll be done in no time, so you can relax and spend your time elsewhere.
+              </p>
+            </div>
+            
+            <div className="text-left">
+              <h3 className="font-semibold text-[#202e13] text-[22px] mb-2 bg-transparent inline-block px-3 py-1">
+                04 | See You Soon
+              </h3>
+              <p className="font-normal text-[#6f6f6f] text-base">
+                If you choose for us to come repeatedly then you can expect to see us then, and if you have any questions about gardening in the meantime, I would love to answer them and help :)
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What Makes Us Different Section */}
+      <section className="w-full bg-[#202e13] py-10">
+        <div className="px-4">
+          <h2 className="font-semibold text-[36px] text-right">
+            <span className="text-white">WHAT MAKES US </span>
+            <span className="text-[#979696]">DIFFERENT</span>
+            <span className="text-white">?</span>
+          </h2>
+          <div className="font-normal text-white text-lg mb-6 text-right">
+            [&nbsp;&nbsp; ABOUT US&nbsp;&nbsp; ]
+          </div>
+
+          <div className="space-y-8">
+            {differentiators.map((item, index) => (
+              <div 
+                key={index} 
+                className={`flex flex-col ${item.align === 'right' ? 'items-end text-right' : 'items-start text-left'}`}
+              >
+                <h3 className="font-semibold text-white text-[22px] mb-2">
+                  {item.title}
+                </h3>
+                <p className="font-normal text-white text-base max-w-[80%]">
+                  {item.description.split("\n\n").map((paragraph, i) => (
+                    <React.Fragment key={i}>
+                      {paragraph}
+                      {i < item.description.split("\n\n").length - 1 && (
+                        <>
+                          <br />
+                          <br />
+                        </>
+                      )}
+                    </React.Fragment>
+                  ))}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 relative">
+            <div className="absolute inset-0 bg-black bg-opacity-40 rounded-lg z-10"></div>
+            <img
+              className="w-full h-[250px] object-cover rounded-lg"
+              alt="Garden landscape"
+              src="https://c.animaapp.com/mdii0hdzXe40MW/img/rectangle-11.png"
+              loading="lazy"
+              decoding="async"
+            />
+            <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
+              <Button className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[50px] bg-white hover:bg-gray-100 rounded-none z-20">
+                <span className="font-semibold text-[#202e13] text-lg">
+                  Contact Us
+                </span>
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Gallery Section */}
       <section id="gallery" className="w-full bg-ligth-gray py-10">
         <div className="px-4">
-          <div className="text-right mb-6">
+          <div className="text-left mb-6">
             <h2 className="font-semibold text-[36px]">
               <span className="text-[#202e13]">CHECK OUT OUR </span>
               <span className="text-[#979696]">GALLERY</span>
@@ -498,49 +549,19 @@ export const MobileHome = (): JSX.Element => {
               [&nbsp;&nbsp; TESTIMONIALS&nbsp;&nbsp; ]
             </div>
 
-            <div className="relative text-center">
+            <div className="text-center">
               <p className="font-semibold text-lg mb-6 text-[#202e13] px-4">
-                {formatTestimonialText(testimonials[currentTestimonial].text)}
+                {formatTestimonialText(testimonials[0].text)}
               </p>
 
               <h4 className="font-semibold text-[#202e13] text-[22px]">
-                {testimonials[currentTestimonial].author}
+                {testimonials[0].author}
               </h4>
-              {testimonials[currentTestimonial].position && (
+              {testimonials[0].position && (
                 <p className="font-normal text-[#9c9797] text-lg">
-                  {testimonials[currentTestimonial].position}
+                  {testimonials[0].position}
                 </p>
               )}
-
-              {/* Navigation Arrows */}
-              <button
-                onClick={prevTestimonial}
-                className="absolute left-2 top-1/2 -translate-y-1/2 p-2 text-[#202e13] hover:text-[#2d3e1e] transition-colors"
-                aria-label="Previous testimonial"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button
-                onClick={nextTestimonial}
-                className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-[#202e13] hover:text-[#2d3e1e] transition-colors"
-                aria-label="Next testimonial"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </div>
-
-            {/* Dots Indicator */}
-            <div className="flex justify-center mt-4 space-x-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentTestimonial(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    index === currentTestimonial ? 'bg-[#202e13]' : 'bg-[#9c9797]'
-                  }`}
-                  aria-label={`Go to testimonial ${index + 1}`}
-                />
-              ))}
             </div>
           </div>
         </div>

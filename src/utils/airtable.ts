@@ -10,6 +10,15 @@ export interface ContactFormData {
   message: string;
 }
 
+export interface PhoneClickData {
+  phoneNumber: string;
+  timestamp: string;
+  userAgent: string;
+  page: string;
+}
+
+
+
 export const submitToAirtable = async (formData: ContactFormData): Promise<boolean> => {
   try {
     const response = await fetch(`https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_ID}`, {
@@ -36,6 +45,36 @@ export const submitToAirtable = async (formData: ContactFormData): Promise<boole
     return true;
   } catch (error) {
     console.error('Error submitting to Airtable:', error);
+    return false;
+  }
+};
+
+export const trackPhoneClick = async (phoneClickData: PhoneClickData): Promise<boolean> => {
+  try {
+    const response = await fetch(`https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_ID}`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${AIRTABLE_PAT}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        fields: {
+          "fld3BeuUiqp9YW8K6": `Phone Click - ${phoneClickData.phoneNumber}`,
+          "fldlC7Ap0FL2UAUHS": phoneClickData.phoneNumber,
+          "fldUjbOeZmeSUXfHo": phoneClickData.userAgent,
+          "fldPQr2BQRYrBaD1w": phoneClickData.page,
+          "fldG7rTJbxlOQxmuQ": `Phone clicked at ${phoneClickData.timestamp}`,
+        },
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    return true;
+  } catch (error) {
+    console.error('Error tracking phone click:', error);
     return false;
   }
 };

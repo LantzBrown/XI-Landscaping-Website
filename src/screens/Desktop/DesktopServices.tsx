@@ -147,7 +147,8 @@ export const DesktopServices = (): JSX.Element => {
 
       {/* CTA Section */}
       <div className="relative w-full h-[400px] lg:h-[596px] bg-[url(https://c.animaapp.com/mdhv6xukEmiG5d/img/rectangle-51-1.png)] bg-cover bg-center">
-        <div className="container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
+        <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+        <div className="container mx-auto px-4 h-full flex flex-col justify-center items-center text-center relative z-10">
         <h2 className="font-['Inter',Helvetica] font-semibold text-[40px] lg:text-[78px] tracking-[0] leading-[normal] mb-4">
           <span className="text-white">READY TO </span>
           <span className="text-[#d6d6d6]">DESIGN</span>
