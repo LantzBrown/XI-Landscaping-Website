@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17395942235"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-17395942235');
+
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-17395942235/wYrvCOuk9_0aENuGhOdA',
+            'event_callback': callback
+        });
+        return false;
+      }
+    </script>
+    <title>XI Landscaping</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="icon" type="image/png" href="https://ik.imagekit.io/lantz/Sabas/Stock%20images/XI-Landscaping-Favicon%20.png?updatedAt=1754022924579" />
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Inter:300,400,500,700,600");
+    </style>
+    <!-- Hotjar Tracking Code for XI Landscaping -->
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:6480331,hjsv:6};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    <link href="tailwind.css" rel="stylesheet" />
+    <link href="tailwind.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="./src/index.tsx"></script>
+  </body>
+</html>

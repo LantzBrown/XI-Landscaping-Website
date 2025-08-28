@@ -1,0 +1,465 @@
+{
+  "nodes": [
+    {
+      "id": "src/components/ResponsiveLayout.tsx",
+      "label": "ResponsiveLayout",
+      "routes": [
+        "/",
+        "/services",
+        "/gallery",
+        "/contact"
+      ],
+      "isRoot": true
+    }
+  ],
+  "edges": [
+    {
+      "id": "src/screens/Desktop/DesktopHome.tsx:213:10-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\" className=\"absolute top-[46px] left-10 font-['Inter',Helvetica] font-bold text-white text-[26px] tracking-[0] leading-[normal] whitespace-nowrap\">\n            XI Landscaping\n          </Link>",
+          "line": 213,
+          "endLine": 215,
+          "column": 10,
+          "endColumn": 17,
+          "sourceFile": "src/screens/Desktop/DesktopHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Desktop/DesktopHome.tsx:218:12-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link \n              to=\"/\" \n              className=\"font-['Inter',Helvetica] font-normal text-white text-[22px] tracking-[0] leading-[normal] hover:underline\"\n            >\n              HOME\n            </Link>",
+          "line": 218,
+          "endLine": 223,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src/screens/Desktop/DesktopHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Desktop/DesktopHome.tsx:224:12-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/services",
+        "trigger": {
+          "element": "<Link \n              to=\"/services\" \n              className=\"font-['Inter',Helvetica] font-normal text-white text-[22px] tracking-[0] leading-[normal] hover:underline\"\n            >\n              SERVICES\n            </Link>",
+          "line": 224,
+          "endLine": 229,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src/screens/Desktop/DesktopHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Desktop/DesktopHome.tsx:230:12-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/gallery",
+        "trigger": {
+          "element": "<Link \n              to=\"/gallery\" \n              className=\"font-['Inter',Helvetica] font-normal text-white text-[22px] tracking-[0] leading-[normal] hover:underline\"\n            >\n              GALLERY\n            </Link>",
+          "line": 230,
+          "endLine": 235,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src/screens/Desktop/DesktopHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Desktop/DesktopHome.tsx:236:12-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/contact",
+        "trigger": {
+          "element": "<Link \n              to=\"/contact\" \n              className=\"font-['Inter',Helvetica] font-normal text-white text-[22px] tracking-[0] leading-[normal] hover:underline\"\n            >\n              CONTACT\n            </Link>",
+          "line": 236,
+          "endLine": 241,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src/screens/Desktop/DesktopHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Desktop/DesktopHome.tsx:263:10-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/contact",
+        "trigger": {
+          "element": "<Link to=\"/contact\">\n            <Button className=\"h-[75px] w-[261px] bg-white hover:bg-gray-100 rounded-none\">\n              <span className=\"font-semibold text-[#202e13] text-2xl\">\n                Free Estimate\n              </span>\n            </Button>\n          </Link>",
+          "line": 263,
+          "endLine": 269,
+          "column": 10,
+          "endColumn": 17,
+          "sourceFile": "src/screens/Desktop/DesktopHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Desktop/DesktopHome.tsx:334:10-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/contact",
+        "trigger": {
+          "element": "<Link to=\"/contact\" onClick={() => window.scrollTo(0, 0)}>\n            <Button className=\"mt-12 w-[250px] h-[60px] bg-[#202e13] hover:bg-[#2d3e1e] rounded-none\">\n              <span className=\"font-semibold text-white text-[22px]\">\n                Contact Us\n              </span>\n            </Button>\n          </Link>",
+          "line": 334,
+          "endLine": 340,
+          "column": 10,
+          "endColumn": 17,
+          "sourceFile": "src/screens/Desktop/DesktopHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Desktop/DesktopHome.tsx:389:12-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/services",
+        "trigger": {
+          "element": "<Link \n              to=\"/services\" \n              onClick={() => window.scrollTo(0, 0)}\n              className=\"font-bold text-[#202e13] text-2xl underline hover:opacity-80 transition-opacity\"\n            >\n              See More Services\n            </Link>",
+          "line": 389,
+          "endLine": 395,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src/screens/Desktop/DesktopHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Desktop/DesktopHome.tsx:401:14-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/services",
+        "trigger": {
+          "element": "<Link \n                key={index} \n                to=\"/services\" \n                onClick={() => window.scrollTo(0, 0)}\n                className=\"relative w-1/3 h-[600px] cursor-pointer hover:opacity-90 transition-opacity\"\n              >\n                <div className=\"absolute inset-0 bg-black bg-opacity-40 rounded-lg z-10\"></div>\n                <img\n                  className=\"w-full h-full object-cover rounded-lg\"\n                  alt={`${service.title} landscaping`}\n                  src={service.image}\n                  loading=\"lazy\"\n                  decoding=\"async\"\n                />\n                <div className=\"absolute bottom-[80px] left-0 w-full text-center px-4 z-20\">\n                  <h3 className=\"font-semibold text-white text-5xl mb-4\">\n                    {service.title}\n                  </h3>\n                  <p className=\"font-normal text-[#f6f6f6] text-xl\">\n                    {service.description}\n                  </p>\n                </div>\n              </Link>",
+          "line": 401,
+          "endLine": 423,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src/screens/Desktop/DesktopHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Desktop/DesktopHome.tsx:456:14-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/gallery",
+        "trigger": {
+          "element": "<Link to=\"/gallery\" onClick={() => window.scrollTo(0, 0)}>\n                <div className=\"relative\">\n                  <img\n                    className=\"w-full h-[500px] object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity\"\n                    alt=\"Garden landscape\"\n                    src=\"https://c.animaapp.com/mdii0hdzXe40MW/img/rectangle-22.png\"\n                    loading=\"lazy\"\n                    decoding=\"async\"\n                  />\n                  <div className=\"absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20\">\n                    <div className=\"w-[100px] h-[100px] rounded-full border-2 border-solid border-[#202e13] bg-white bg-opacity-10 flex items-center justify-center cursor-pointer hover:bg-opacity-20 transition-colors\">\n                      <div className=\"font-normal text-[#202e13] text-[16px] text-center font-semibold\">\n                        VIEW<br />\n                        MORE\n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </Link>",
+          "line": 456,
+          "endLine": 474,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src/screens/Desktop/DesktopHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Desktop/DesktopHome.tsx:547:10-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/contact",
+        "trigger": {
+          "element": "<Link to=\"/contact\">\n            <Button className=\"w-[180px] h-[60px] bg-white hover:bg-gray-100 rounded-none\">\n              <span className=\"font-semibold text-[#202e13] text-xl\">\n                Contact Us\n              </span>\n            </Button>\n          </Link>",
+          "line": 547,
+          "endLine": 553,
+          "column": 10,
+          "endColumn": 17,
+          "sourceFile": "src/screens/Desktop/DesktopHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Desktop/DesktopHome.tsx:614:8-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/contact",
+        "trigger": {
+          "element": "<Link to=\"/contact\" onClick={() => window.scrollTo(0, 0)}>\n          <div className=\"flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-[40px] mb-8\">\n            <span className=\"font-['Inter',Helvetica] font-semibold text-[#202e13] text-[18px] lg:text-[22px] tracking-[0] leading-[normal]\">\n              SITEMAP\n            </span>\n\n            <div className=\"flex flex-wrap gap-4 md:gap-[40px]\">\n              <Link\n                to=\"/\"\n                className=\"font-['Inter',Helvetica] font-normal text-[#6f6f6f] text-[18px] lg:text-[22px] tracking-[0] leading-[normal]\"\n              >\n                HOME\n              </Link>\n              <Link\n                to=\"/services\"\n                className=\"font-['Inter',Helvetica] font-normal text-[#6f6f6f] text-[18px] lg:text-[22px] tracking-[0] leading-[normal]\"\n              >\n                SERVICES\n              </Link>\n              <Link\n                to=\"/gallery\"\n                className=\"font-['Inter',Helvetica] font-normal text-[#6f6f6f] text-[18px] lg:text-[22px] tracking-[0] leading-[normal]\"\n              >\n                GALLERY\n              </Link>\n              <Link\n                to=\"/contact\"\n                className=\"font-['Inter',Helvetica] font-normal text-[#6f6f6f] text-[18px] lg:text-[22px] tracking-[0] leading-[normal]\"\n              >\n                CONTACT\n              </Link>\n            </div>\n          </div>\n        </Link>",
+          "line": 614,
+          "endLine": 647,
+          "column": 8,
+          "endColumn": 15,
+          "sourceFile": "src/screens/Desktop/DesktopHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Desktop/DesktopHome.tsx:621:14-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link\n                to=\"/\"\n                className=\"font-['Inter',Helvetica] font-normal text-[#6f6f6f] text-[18px] lg:text-[22px] tracking-[0] leading-[normal]\"\n              >\n                HOME\n              </Link>",
+          "line": 621,
+          "endLine": 626,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src/screens/Desktop/DesktopHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Desktop/DesktopHome.tsx:627:14-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/services",
+        "trigger": {
+          "element": "<Link\n                to=\"/services\"\n                className=\"font-['Inter',Helvetica] font-normal text-[#6f6f6f] text-[18px] lg:text-[22px] tracking-[0] leading-[normal]\"\n              >\n                SERVICES\n              </Link>",
+          "line": 627,
+          "endLine": 632,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src/screens/Desktop/DesktopHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Desktop/DesktopHome.tsx:633:14-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/gallery",
+        "trigger": {
+          "element": "<Link\n                to=\"/gallery\"\n                className=\"font-['Inter',Helvetica] font-normal text-[#6f6f6f] text-[18px] lg:text-[22px] tracking-[0] leading-[normal]\"\n              >\n                GALLERY\n              </Link>",
+          "line": 633,
+          "endLine": 638,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src/screens/Desktop/DesktopHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Desktop/DesktopHome.tsx:639:14-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/contact",
+        "trigger": {
+          "element": "<Link\n                to=\"/contact\"\n                className=\"font-['Inter',Helvetica] font-normal text-[#6f6f6f] text-[18px] lg:text-[22px] tracking-[0] leading-[normal]\"\n              >\n                CONTACT\n              </Link>",
+          "line": 639,
+          "endLine": 644,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src/screens/Desktop/DesktopHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Mobile/MobileHome.tsx:217:8-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link to=\"/\" className=\"absolute top-[15px] left-4 font-['Inter',Helvetica] font-bold text-white text-[26px] tracking-[0] leading-[normal] whitespace-nowrap z-10\">\n          XI Landscaping\n        </Link>",
+          "line": 217,
+          "endLine": 219,
+          "column": 8,
+          "endColumn": 15,
+          "sourceFile": "src/screens/Mobile/MobileHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Mobile/MobileHome.tsx:283:10-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/contact",
+        "trigger": {
+          "element": "<Link to=\"/contact\" onClick={() => window.scrollTo(0, 0)}>\n            <Button className=\"h-[60px] w-[200px] bg-white hover:bg-gray-100 rounded-none\">\n              <span className=\"font-semibold text-[#202e13] text-xl\">\n                Free Estimate\n              </span>\n            </Button>\n          </Link>",
+          "line": 283,
+          "endLine": 289,
+          "column": 10,
+          "endColumn": 17,
+          "sourceFile": "src/screens/Mobile/MobileHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Mobile/MobileHome.tsx:340:12-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/contact",
+        "trigger": {
+          "element": "<Link to=\"/contact\" onClick={() => window.scrollTo(0, 0)}>\n              <Button className=\"absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[50px] bg-[#202e13] hover:bg-[#2d3e1e] rounded-none z-20\">\n                <span className=\"font-semibold text-white text-lg\">\n                  Contact Us\n                </span>\n              </Button>\n            </Link>",
+          "line": 340,
+          "endLine": 346,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src/screens/Mobile/MobileHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Mobile/MobileHome.tsx:373:18-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/contact",
+        "trigger": {
+          "element": "<Link to=\"/contact\" onClick={() => window.scrollTo(0, 0)}>\n                    <h3 className=\"font-semibold text-[#202e13] text-[22px] mb-2 bg-white inline-block px-3 py-1 cursor-pointer hover:bg-gray-100\">\n                      {step.number} | {step.title}\n                    </h3>\n                  </Link>",
+          "line": 373,
+          "endLine": 377,
+          "column": 18,
+          "endColumn": 25,
+          "sourceFile": "src/screens/Mobile/MobileHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Mobile/MobileHome.tsx:406:14-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/services",
+        "trigger": {
+          "element": "<Link \n                key={index} \n                to=\"/services\" \n                onClick={() => window.scrollTo(0, 0)} \n                className={`block ${index < serviceCategories.length - 1 ? \"mb-8\" : \"\"}`}\n              >\n                <div className=\"relative w-full h-[300px] rounded-lg overflow-hidden cursor-pointer hover:opacity-90 transition-opacity\">\n                  <img\n                    className=\"w-full h-full object-cover\"\n                    alt={`${service.title} landscaping`}\n                    src={service.image}\n                    loading=\"lazy\"\n                    decoding=\"async\"\n                  />\n                  <div className=\"absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-center p-4\">\n                    <h3 className=\"font-semibold text-white text-4xl mb-4\">\n                      {service.title}\n                    </h3>\n                    <p className=\"font-normal text-[#f6f6f6] text-base px-4\">\n                      {service.description}\n                    </p>\n                  </div>\n                </div>\n              </Link>",
+          "line": 406,
+          "endLine": 429,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src/screens/Mobile/MobileHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Mobile/MobileHome.tsx:434:12-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/services",
+        "trigger": {
+          "element": "<Link \n              to=\"/services\" \n              onClick={() => window.scrollTo(0, 0)}\n            >\n              <Button className=\"mx-auto block w-[200px] h-[50px] bg-[#202e13] hover:bg-[#2d3e1e] rounded-none\">\n                <span className=\"font-semibold text-white text-lg\">\n                  See All Services\n                </span>\n              </Button>\n            </Link>",
+          "line": 434,
+          "endLine": 443,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src/screens/Mobile/MobileHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Mobile/MobileHome.tsx:480:14-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/gallery",
+        "trigger": {
+          "element": "<Link to=\"/gallery\" onClick={() => window.scrollTo(0, 0)}>\n                <div className=\"absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80px] h-[80px] rounded-full border border-solid border-[#202e13] flex items-center justify-center cursor-pointer hover:bg-white hover:bg-opacity-10 transition-colors\">\n                  <div className=\"font-normal text-[#202e13] text-[14px] text-center\">\n                    VIEW <br />\n                    MORE\n                  </div>\n                </div>\n              </Link>",
+          "line": 480,
+          "endLine": 487,
+          "column": 14,
+          "endColumn": 21,
+          "sourceFile": "src/screens/Mobile/MobileHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Mobile/MobileHome.tsx:559:12-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/contact",
+        "trigger": {
+          "element": "<Link to=\"/contact\" onClick={() => window.scrollTo(0, 0)}>\n            <Button className=\"w-[150px] h-[50px] bg-white hover:bg-gray-100 rounded-none\">\n              <span className=\"font-semibold text-[#202e13] text-lg\">\n                Contact Us\n              </span>\n            </Button>\n            </Link>",
+          "line": 559,
+          "endLine": 565,
+          "column": 12,
+          "endColumn": 19,
+          "sourceFile": "src/screens/Mobile/MobileHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Mobile/MobileHome.tsx:630:16-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/",
+        "trigger": {
+          "element": "<Link\n                  to=\"/\"\n                  onClick={() => window.scrollTo(0, 0)}\n                  className=\"font-['Inter',Helvetica] font-normal text-[#6f6f6f] text-[15px] tracking-[0] leading-[normal] whitespace-nowrap\"\n                >\n                  HOME\n                </Link>",
+          "line": 630,
+          "endLine": 636,
+          "column": 16,
+          "endColumn": 23,
+          "sourceFile": "src/screens/Mobile/MobileHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Mobile/MobileHome.tsx:637:16-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/services",
+        "trigger": {
+          "element": "<Link\n                  to=\"/services\"\n                  onClick={() => window.scrollTo(0, 0)}\n                  className=\"font-['Inter',Helvetica] font-normal text-[#6f6f6f] text-[15px] tracking-[0] leading-[normal] whitespace-nowrap\"\n                >\n                  SERVICES\n                </Link>",
+          "line": 637,
+          "endLine": 643,
+          "column": 16,
+          "endColumn": 23,
+          "sourceFile": "src/screens/Mobile/MobileHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Mobile/MobileHome.tsx:644:16-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/gallery",
+        "trigger": {
+          "element": "<Link\n                  to=\"/gallery\"\n                  onClick={() => window.scrollTo(0, 0)}\n                  className=\"font-['Inter',Helvetica] font-normal text-[#6f6f6f] text-[15px] tracking-[0] leading-[normal] whitespace-nowrap\"\n                >\n                  GALLERY\n                </Link>",
+          "line": 644,
+          "endLine": 650,
+          "column": 16,
+          "endColumn": 23,
+          "sourceFile": "src/screens/Mobile/MobileHome.tsx"
+        }
+      }
+    },
+    {
+      "id": "src/screens/Mobile/MobileHome.tsx:651:16-to-src/components/ResponsiveLayout.tsx",
+      "source": "src/components/ResponsiveLayout.tsx",
+      "target": "src/components/ResponsiveLayout.tsx",
+      "data": {
+        "viaRoute": "/contact",
+        "trigger": {
+          "element": "<Link\n                  to=\"/contact\"\n                  onClick={() => window.scrollTo(0, 0)}\n                  className=\"font-['Inter',Helvetica] font-normal text-[#6f6f6f] text-[15px] tracking-[0] leading-[normal] whitespace-nowrap\"\n                >\n                  CONTACT\n                </Link>",
+          "line": 651,
+          "endLine": 657,
+          "column": 16,
+          "endColumn": 23,
+          "sourceFile": "src/screens/Mobile/MobileHome.tsx"
+        }
+      }
+    }
+  ]
+}
